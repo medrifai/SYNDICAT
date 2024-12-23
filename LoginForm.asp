@@ -35,7 +35,7 @@
         {
             width:95%;
             border-radius:7px;
-            padding-left:7px;"
+            padding-left:7px;
             background-color:#06bbcc;
             border:2px solid #06bbcc;
             color:navy;
@@ -47,7 +47,6 @@
             color:navy;
         }
     </style>
-
 
     <script src="js/com.js"></script> 
     <script type="text/javascript">
