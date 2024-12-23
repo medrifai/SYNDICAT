@@ -1,0 +1,17 @@
+USE [SYNDICAT]
+GO
+/****** Object:  StoredProcedure [dbo].[ps_GetBudgetStats]    Script Date: 23/12/2024 23:50:45 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- 3. Requêtes pour les statistiques du budget
+ALTER PROCEDURE [dbo].[ps_GetBudgetStats]
+AS
+BEGIN
+    SELECT
+        (SELECT SUM(MontantBudget) FROM TBUDGETS ) as BudgetAnnuel,
+        (SELECT SUM(MontantCotisation) FROM TCOTISATIONS WHERE YEAR(DateCotisation) = YEAR(GETDATE())) as CotisationsPercues,
+        (SELECT SUM(MontantOpeBanq) FROM TOPEBANQ WHERE TypeOpeBanq = 'Recette') as TotalRecettes,
+        (SELECT SUM(MontantOpeBanq) FROM TOPEBANQ WHERE TypeOpeBanq = 'Depense') as TotalDepenses
+END

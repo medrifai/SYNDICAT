@@ -1,0 +1,18 @@
+USE [SYNDICAT]
+GO
+/****** Object:  StoredProcedure [dbo].[ps_GetUserStats]    Script Date: 24/12/2024 00:07:23 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- 1. Requêtes pour les statistiques des utilisateurs
+ALTER PROCEDURE [dbo].[ps_GetUserStats]
+AS
+BEGIN
+    SELECT
+        (SELECT COUNT(*) FROM TADMINS) as NombreAdmins,
+        (SELECT COUNT(DISTINCT IdProprio) FROM TPROPRIOS) as NombreProprios,
+        ((SELECT COUNT(*) FROM TADMINS) +
+         (SELECT COUNT(DISTINCT IdProprio) FROM TPROPRIOS)) as TotalUsers
+END
+

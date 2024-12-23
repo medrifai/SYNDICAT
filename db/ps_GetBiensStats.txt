@@ -1,0 +1,17 @@
+USE [SYNDICAT]
+GO
+/****** Object:  StoredProcedure [dbo].[ps_GetBiensStats]    Script Date: 24/12/2024 00:06:37 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- 2. Requêtes pour les statistiques des biens
+ALTER PROCEDURE [dbo].[ps_GetBiensStats]
+AS
+BEGIN
+    SELECT
+        COUNT(*) as TotalBiens,
+        SUM(CASE WHEN type_bien = 'Appartement' THEN 1 ELSE 0 END) as NombreAppartements,
+        SUM(CASE WHEN type_bien = 'Local' THEN 1 ELSE 0 END) as NombreLocaux
+    FROM TBIENS
+END
