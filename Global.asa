@@ -1,10 +1,10 @@
 ﻿<SCRIPT LANGUAGE="VBScript" RUNAT="Server">
 	Sub Application_OnStart()
 		'//	Local String Connexion 
-		Application("PC") = "Provider=SQLOLEDB;Data Source=DESKTOP-TAP8MNT;Initial Catalog=SYNDICAT;User ID=Syndicat;Password=Syndicat"
+		Application("PC") = "Provider=SQLOLEDB;Data Source=RAIDIOUALID;Initial Catalog=SYNDICAT;User ID=OUALID;Password=Oualid#123"
 			
 		'//	Production String Connexion
-		'Application("PC") = "Provider=SQLOLEDB;Data Source=xxx;Initial Catalog=xxx;User ID=kheops_ola;Password=xxx"
+		'Application("PC") = "Provider=SQLOLEDB;Data Source=RAIDIOUALIDs;Initial Catalog=xxx;User ID=kheops_ola;Password=xxx"
 	End Sub
 
 	'Sub Session_OnStart() 

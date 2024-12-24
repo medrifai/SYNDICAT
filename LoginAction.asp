@@ -27,6 +27,7 @@
 	'Response.write Application("PC")
 	'Response.end
 	'ON ERROR RESUME NEXT
+
 	Set Cx = Server.CreateObject("ADODB.Connection")
 	Cx.Open Application("PC")
 
